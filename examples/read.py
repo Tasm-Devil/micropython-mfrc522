@@ -1,15 +1,12 @@
 from time import sleep_ms
-
-# SPI-BUS INIT
 from machine import Pin, SPI
+from lib.rfid.mfrc522 import MFRC522
+
 sck = Pin(18, Pin.OUT)
 mosi = Pin(23, Pin.OUT)
 miso = Pin(19, Pin.OUT)
 spi = SPI(baudrate=100000, polarity=0, phase=0, sck=sck, mosi=mosi, miso=miso)
 
-# Testing rfid module
-# https://github.com/wendlers/micropython-mfrc522
-from lib.rfid.mfrc522 import MFRC522
 sda = Pin(5, Pin.OUT)
 
 try:
